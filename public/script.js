@@ -27,6 +27,29 @@ const copyToClipboard = () =>{
 
 //////////////////////////////////////////////
 
+//Dark Mode And Light mode toggle
+
+const options = {
+  bottom: '32px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.3s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies:true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+console.log(options);
+
+const darkmode = new Darkmode(options);
+console.log(darkmode);
+darkmode.showWidget();    
+
+////////////////
+
 const socket = io('/')
 
 const videogrid= document.getElementById('video-grid')
@@ -108,7 +131,7 @@ mypeer.on('call', call => {
 }) 
 })  ;   */ 
 
-socket.on('user-connected', userId => {
+socket.on('user-connected', userId => {   //as new user connected pass our video stream to that user
     // user is joining
     setTimeout(() => {
       // user joined
@@ -173,13 +196,13 @@ function addvideostream(video,stream ){
     console.log(video);       ////////////
 
     ////////////
-    let totalUsers = document.getElementsByTagName("video").length;
+    /*let totalUsers = document.getElementsByTagName("video").length;
     if (totalUsers > 1) {
       for (let index = 0; index < totalUsers; index++) {
         document.getElementsByTagName("video")[index].style.width =
           100 / totalUsers + "%";
       }
-    }
+    }   */
 
   /////////////
 
