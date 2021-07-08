@@ -37,48 +37,79 @@
 
 <body>
      
-    <header>
-        
-        <div class="overlay" onclick="hideInvite() "></div>
-        <div class="invitePop">
-            <input type="text" value="...." id="roomLink" randomly />
-            <button onclick="copyToClipboard() ">Copy</button>
-        </div>
-       
-        <div class="media-button" id="users" onclick="InviteUsers() ">
-            <i class="fa fa-user-plus"></i>
-            <span>Add Users</span>
-        </div>
-       
+    <div class="main">
+        <div class="left-part">
+            
+            <div class="main__videos">
+                <div id="video-grid"></div>
+            </div>
 
-    </header>
+            <div class="media-controls">
 
-    <div class="main-videos">
-        <div id="video-grid"></div>
+                <div class=" media-control-block">
+
+                    <div class="media-control-button mute_button" id="muteButton" onclick="muteaudio() ">
+                        <i class="fa fa-microphone"></i>
+                        <span>Mute</span>
+                    </div>
+
+                    <!--<div class="media-control-button" id="leave" onlick="LeaveMeet()">
+                        <i class="fa fa-phone"></i>
+                        <span>Leave Call</span>
+                    </div>  -->
+
+                    <div class="media-control-button video_button" id="pause" onclick="stopvideo()">
+                        <i class="fa fa-video-camera"></i>
+                        <span>Pause</span>
+                    </div>
+                </div>
+                <div class="media-control-block">
+
+                    <div class="media-control-button" id="chat_Btn" onclick="showchat(this)">
+                        <i class="fa fa-comment"></i>
+                        <span>Chat</span>
+
+                    </div>
+
+                    <div class="overlay" onclick="hideInvite() "></div>
+                    <div class="invitePop">
+                        <input type="text" value="...." id="roomLink" randomly />
+                        <button onclick="copyToClipboard() ">Copy</button>
+                    </div>
+
+                    <div class="media-control-button" id="users" onclick="InviteUsers() ">
+                        <i class="fa fa-user-plus"></i>
+                        <span>Add Users</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right-part">
+
+            <div class="chat-header">
+                <h6><span class="Live"></span>Chat</h6>
+            </div>
+
+            <div class="chat-window" id="chat-window">
+                <ul class="messages" id="all_messages"></ul>
+            </div>
+
+            <div class="message-container">
+
+                <input type="text" id="chat_message" placeholder="Type your message" />
+
+                <button class="sendMsg" id="sendMsg">
+                    <i class="fa fa-paper-plane"></i>
+                </button>
+
+            </div>
+        </div>
     </div>
 
-
-    <div class="media-blocks-control"></div>
-
-    <div class="media-blocks">
-
-        <div class="media-button mute_button" id="mute" onclick="muteaudio() ">
-            <i class="fas fa-microphone"></i>
-            <span>Mute</span>
-        </div>
-
-        <div class="media-button" id="leave" onlick="LeaveMeet()">
-            <i class="fa fa-phone"></i>
-            <span>Leave Call</span>
-        </div>
-
-        <div class="media-button video_button" id="pause" onclick="stopvideo()">
-            <i class="fas fa-video"></i>
-            <span>Pause</span>
-        </div>
-
-    </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>  
 </body>
