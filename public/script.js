@@ -1,6 +1,13 @@
   
 ////////////////////////////////////////////////////////////////
 
+const inputbox= document.getElementById("chat-message");
+const all_messages = document.getElementById("all_messages");
+const chatwindow = document.getElementById("chat-window");
+
+
+
+
 //For inviting new users
 
 const InviteUsers = () =>{
@@ -23,6 +30,11 @@ const copyToClipboard = () =>{
 
   alert("copied: " + copyText.value);
   hideInvite();
+};
+
+const showchat = (e)=>{
+  e.classList.toggle("active");
+  document.body.classList.toggle("Showchat");
 };
 
 //////////////////////////////////////////////
@@ -49,6 +61,11 @@ console.log(darkmode);
 darkmode.showWidget();    
 
 ////////////////
+
+/////Taking input of user's name
+const yourName = prompt("Enter your Name");
+console.log(yourName);
+
 
 const socket = io('/')
 
@@ -138,6 +155,32 @@ socket.on('user-connected', userId => {   //as new user connected pass our video
       connecttonewuser(userId, stream);
     }, 1000)
   }) 
+
+//messages
+ // input value
+ //let inputbox= document.getElementById("chat-message");
+ let text = $("#chat-message");
+ console.log(text);
+ // when press enter send message
+ $('html').keydown(function (e) {
+   if (e.which == 13 && text.val().length !== 0) {
+     console.log(text.val());
+     socket.emit('message', text.val() , yourName);
+     console.log(text.val());
+     console.log(yourName);
+     text.val('')
+    
+   }
+ });
+ socket.on("createMessage",(message) => {
+   console.log(message);
+   $("ul").append(`<li class="message"><b>${message.userId}</b><br/>=${message.message}</li>`);
+   console.log(`${message.userId}`);
+   scrollToBottom()
+ });  
+
+
+
 });  
 
 
@@ -254,6 +297,11 @@ const setMuteButton = () => {
   <span>Mute</span>`;
   document.getElementById("mute").innerHTML = html;
 };   */
+
+const scrollToBottom = () => {
+  var d = $('.chat-window');
+  d.scrollTop(d.prop("scrollHeight"));
+} 
 
 const muteaudio = () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;

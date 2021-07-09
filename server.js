@@ -30,6 +30,17 @@ io.on('connection', socket =>{     //fired upon connection from client and socke
     socket.join(roomId)   //a new user joined the room  (add the socket to generated roomId)
     socket.broadcast.to(roomId).emit('user-connected', userId) //telling users in the room that new user have joined
 
+    //messages
+    socket.on('message', (message, yourName)=>{
+        console.log(message);
+        console.log(yourName);
+        console.log(roomId);
+        io.to(roomId).emit('createMessage',{
+            message:message, userId:yourName
+            
+        });
+    });
+
     socket.on('disconnect',() =>{
        
         socket.broadcast.to(roomId).emit('user-disconnected',userId)
