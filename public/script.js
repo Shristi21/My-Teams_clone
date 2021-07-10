@@ -158,7 +158,6 @@ socket.on('user-connected', userId => {   //as new user connected pass our video
 
 //messages
  // input value
- //let inputbox= document.getElementById("chat-message");
  let text = $("#chat-message");
  console.log(text);
  // when press enter send message

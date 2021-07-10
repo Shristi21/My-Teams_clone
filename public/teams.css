@@ -188,6 +188,7 @@ flex-direction: column;
 .main__videos {
   flex-grow: 1;
   background-color: rgb(11, 50, 51);
+  background-image: linear-gradient(to right, #6fdff1, #f8f9fa);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -287,5 +288,6 @@ flex-direction: column;
 }
 .unmute {
   color: red;
+  isolation: isolate;
 }
 
