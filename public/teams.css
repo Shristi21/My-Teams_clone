@@ -1,137 +1,3 @@
-/*body{
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(122, 242, 247));
-    background-image: -moz-linear-gradient(to right, rgba(255,0,0,0), rgb(122, 242, 247));
-    background-image: -webkit-linear-gradient(to right, rgba(255,0,0,0), rgb(122, 242, 247));
-    background-image: -o-linear-gradient(to right, rgba(255,0,0,0), rgb(122, 242, 247));
-
-}  
-
-body,html{
-    height:100vh;
-    padding:0;
-    margin:0;
-    
-}
-
-
-header #users{
-    display:flex;
-    margin-left: 90%;   
-}
-.invitePop{
-    padding:7px;
-    isolation: isolate; 
-    
-}
-
-.invitePop > button{
-color:black;
-background-color: #49b3d3;
-border-radius: 3px;
-margin-left: 1%;
-
-}
-#roomLink{
-    border-radius: 5px;
-    border:solid black;
-    box-shadow: 7px 7px 5px grey;
-}
-
-#roomLink:hover{
-    background-color: rgb(247, 247, 110)
-}
-
-.media-blocks-controls{
-    position: fixed;
-    bottom: 0;
-}
-.media-blocks{
-    display:flex;
-    justify-content: center;
-     margin-top: 4.9%;
-    overflow: hidden;
-    background-color: #323538;
-    color:white;
-    width:100%;
-    bottom:0;
-   
-   
-      
-}
-
-.media-blocks:hover{
-    background-color: #1e1f20;
-}
-
-#video-grid {
-    display: grid;
-    grid-gap: 9px;
-    height: 100%; 
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-auto-rows: 300px;
-    isolation:isolate; 
-    border-radius: 3px;
-    
-}
-
-video{
-    width: 100%;
-    height: 100%; 
-    object-fit: contain;
-    border:solid white;
-    isolation: isolate;
-   
-}
-
-.media-button{
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  min-width: 80px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 10px;
-  margin: 5px;
-  
- 
-
-}
-
-.media-button:hover{
-    background-color: rgb(247, 167, 167);
-    color:black;
-    
-  
-}
-.fa-microphone::before{
-    font-size:32px;
-}
-
-.fa-video,.fa-user-plus{
-    font-size:32px;
-}
-.fa-phone{
-    color:red;
-    font-size:33px;
-    isolation: isolate;
-
-}
-.fa-video-slash , .fa-microphone-slash{
-    font-size:32px;
-}
-span{
-    display:block;
-    position:relative;
-    margin:8px 4px;
-    font-size: 19px;
-    font-style: italic;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-}
- 
-
-*/
 
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -285,6 +151,17 @@ flex-direction: column;
   list-style: none;
   border-bottom: 1px solid #3d3d42;
   padding: 10px 0;
+}
+
+input#chat-message {
+  margin: 4px;
+  border: solid white;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+input#chat-message:hover{
+  background-color: #d2d2d2;
 }
 .unmute {
   color: red;
