@@ -1,4 +1,4 @@
-A video chat web application where two users can easily communicate via video calling functionality and can also chat within the app. Application will look on desktop.
+A video chat web application where two users can easily communicate via video calling functionality and can also chat within the app. Application will look fine on desktop.
 
 The application is being made with the help of WebRTC. WebRTC (web Real-Time communication) is a technology which is basically used to capture and stream audio/video as well as exchange data between peers.
 
