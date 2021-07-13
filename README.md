@@ -30,7 +30,7 @@ To run on local host:
 4. In package.json file in scripts replace the content in start with "node server.js"
 5. Run node server.js on terminal. 
 
-I have deployed my web application on heroku
+I have deployed my web application on heroku.
 Deployed Link   ------> https://my-teams-clone.herokuapp.com/
 
 

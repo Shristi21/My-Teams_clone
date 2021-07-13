@@ -43,36 +43,22 @@ const options = {
   label: '🌓', // default: ''
   autoMatchOsTheme: true // default: true
 }
-console.log(options);
+
 
 const darkmode = new Darkmode(options);
-console.log(darkmode);
 darkmode.showWidget();
 
 
 
 /////Taking input of user's name
-const yourName = prompt("Enter your Name");
-console.log(yourName);
-
+const UserName = prompt("Enter your Name");
 
 const socket = io('/')
 
 const videogrid = document.getElementById('video-grid')
 
-console.log("1. apple");
-console.log(socket);  //print
-const leave_Meet = document.getElementById("leave")
-
 //peer server connects different users and gives us unique id
 const mypeer = new Peer(undefined)
-
-/*{ //undefined becoz we want server to generate own id
-  //path: "/peerjs",
-  host: '/',
-  port:'3001',
-  secure:false
-});  */
 
 var pcConfig = {
   'iceServers': [
@@ -128,13 +114,12 @@ navigator.mediaDevices.getUserMedia({   //this function is responsible to take o
   // when press enter send message
   $('html').keydown(function (e) {
     if (e.which == 13 && text.val().length !== 0) {
-      socket.emit('message', text.val(), yourName); //sending the message and name to server
+      socket.emit('message', text.val(), UserName); //sending the message and name to server
       text.val('')  //blanking the input
 
     }
   });
   socket.on("createMessage", (message) => {   //listening to the createMessage event from server
-    // $("ul").append(`<li class="message"><b>${message.userId}</b><br/>=${message.message}</li>`);
     $("ul").append(`<li class="message">${message.userId} : ${message.message}</li>`);
     scrollToBottom()
   });
